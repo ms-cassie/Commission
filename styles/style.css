@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #333;
+	background-color: #f4f4f4;
+}
+
+#output {
+	width: 50%;
+	margin: 2rem auto;
+	padding: 3rem;
+
+	background-color: lightblue;
+	border: 1px solid rgb(90, 120, 129);
+	border-radius: 1rem;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#output h2 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+#output p {
+	margin: 1rem 0;
+	font-size: 1.2rem;
+}

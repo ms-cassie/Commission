@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Cassie Robertson">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="styles/style.css">
+
+	<title>Commission</title>
+</head>
+<body>
+	<script>
+		// Get output section
+		const outputSection = document.getElementById('output');
+
+		// Set initial state
+		let username = '';
+		let userInput = '';
+		let salesTotal = 0;
+		let commissionRate = 0;
+		let commissionTotal = 0;
+		let earningsTotal = 0;
+
+		// Get username
+		username = prompt("Enter your username: ");
+
+		// While loop for application running
+		do {
+			// Prompt user and get input
+			userInput = prompt("Enter the dollar amount for your sales a single sale at a time. Enter Done when you are finished.");
+
+
+		} while (userInput !== 'Done');
+
+		// Determine commission rate & calculate totals
+
+		// Update output section
+		document.write(`
+			<section id="output">
+				<h2>Hello ${username}, Here is your Weekly Commission Report.</h2>
+				<p>Your sales total is $${ salesTotal.toFixed(2) }, so your commission rate is ${ commissionRate }%.</p>
+				<p>Your total commission is $${ commissionTotal.toFixed(2) }.</p>
+				<p>Your total earnings are $${ earningsTotal.toFixed(2) }.</p>
+			</section>
+		`);
+
+	</script>
+</body>
+</html>
