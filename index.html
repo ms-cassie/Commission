@@ -24,23 +24,39 @@
 		let earningsTotal = 0;
 
 		// Get username
-		username = prompt("Enter your username: ");
+		username = prompt("Enter your name: ");
 
-		// While loop for application running
+		// While loop for application running & collecting user input
 		do {
 			// Prompt user and get input
 			userInput = prompt("Enter the dollar amount for your sales a single sale at a time. Enter Done when you are finished.");
 
+			// Add to sales total - only if not done
+			if (userInput !== 'Done' && userInput !== 'done') {
+				salesTotal += parseFloat(userInput);
+			}
 
-		} while (userInput !== 'Done');
+		} while (userInput !== 'Done' && userInput !== 'done');
 
 		// Determine commission rate & calculate totals
+		if (salesTotal <= 0) {
+			commissionRate = 0;
+		}else if (salesTotal > 0 && salesTotal <= 499.99) {
+			commissionRate = 0.05;
+		}else if (salesTotal >= 500 && salesTotal <= 999.99) {
+			commissionRate = 0.1;
+		}else if (salesTotal >= 1000) {
+			commissionRate = 0.15;
+		}
+
+		commissionTotal = salesTotal * commissionRate;
+		earningsTotal = salesTotal + commissionTotal;
 
 		// Update output section
 		document.write(`
 			<section id="output">
 				<h2>Hello ${username}, Here is your Weekly Commission Report.</h2>
-				<p>Your sales total is $${ salesTotal.toFixed(2) }, so your commission rate is ${ commissionRate }%.</p>
+				<p>Your sales total is $${ salesTotal.toFixed(2) }, so your commission rate is ${ commissionRate * 100 }%.</p>
 				<p>Your total commission is $${ commissionTotal.toFixed(2) }.</p>
 				<p>Your total earnings are $${ earningsTotal.toFixed(2) }.</p>
 			</section>
